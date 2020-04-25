@@ -1,0 +1,29 @@
+version: "3"
+services:
+  redis-server:
+    container_name: redis-server
+    image: sample-redis-local:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-network
+    privileged: true
+    command: /sbin/init
+
+  session-tutorial:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: session-tutorial
+    image: session-tutorial:latest
+    ports:
+      - "8081:8080"
+    networks:
+      - redis-network
+    privileged: true
+    depends_on:
+      - redis-server
+
+networks:
+  redis-network:
+    driver: bridge
