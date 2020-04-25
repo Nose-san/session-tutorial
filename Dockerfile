@@ -22,7 +22,7 @@ ENV JAVA_HOME /etc/alternatives/jre
 # (H)
 RUN git clone https://github.com/Nose-san/session-tutorial.git /usr/local/session-tutorial
 # (I)
-#RUN mvn install -f /usr/local/session-tutorial/pom.xml
+RUN mvn install -f /usr/local/session-tutorial/pom.xml
 
 # (J)
 RUN cp /etc/localtime /etc/localtime.org
@@ -33,5 +33,5 @@ RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 EXPOSE 8080
 
 # (M)
-#CMD java -jar /usr/local/session-tutorial/target/session-tutorial-0.0.1-SNAPSHOT.jar
-CMD /sbin/init
+CMD java -jar /usr/local/session-tutorial/target/session-tutorial-0.0.1-SNAPSHOT.jar
+#CMD /sbin/init
