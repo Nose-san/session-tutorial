@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.sessiontutorial.domain.repository.order.OrderRepository">
 
-    <insert id="createOrder" parameterType="Order">
+    <insert id="createOrder" parameterType="com.example.sessiontutorial.domain.model.Order">
         INSERT INTO
             orders
         (

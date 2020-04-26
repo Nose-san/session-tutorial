@@ -1,5 +1,0 @@
-docker build -t sample-redis-local:latest .
-docker run -d --privileged -p 6379:6379 --name redis-server sample-redis-local /sbin/init
-
-docker exec -i -t redis-server bash
-redis-cli

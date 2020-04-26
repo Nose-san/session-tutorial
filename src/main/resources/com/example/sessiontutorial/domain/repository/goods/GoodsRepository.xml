@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.sessiontutorial.domain.repository.goods.GoodsRepository">
 
-    <resultMap id="goodsResultMap" type="Goods">
+    <resultMap id="goodsResultMap" type="com.example.sessiontutorial.domain.model.Goods">
         <id property="id" column="goods_id" />
         <result property="name" column="goods_name" />
         <result property="description" column="description" />
